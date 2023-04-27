@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#this script uses while and if statement to print
+
+i="0"
+while  [ $i -lt 10 ]
+do
+	if [ $i -eq 8 ];then
+		echo "Hi"
+		i=$((i+1))
+	elif [ $i -eq 9 ];then
+		echo "Best School"
+		i=$((i+1))
+	else
+		echo "Best School"
+		i=$((i+1))
+	fi
+done
