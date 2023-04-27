@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#this script uses while, if and elif statement to print
+
+i="0"
+while  [ $i -lt 10 ]
+do
+        if [ $i -eq 4 ];then
+                echo "bad luck"
+                i=$((i+1))
+        elif [ $i -eq 8 ];then
+                echo "good luck"
+                i=$((i+1))
+        else
+                echo "Best School"
+                i=$((i+1))
+        fi
+done
