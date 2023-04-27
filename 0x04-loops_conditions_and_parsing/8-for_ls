@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#this script prints the files in he current directiory
+
+listfiles=$(ls)
+for files in $listfiles
+do
+	echo "$files" | cut -f 2 -d '-'
+done
