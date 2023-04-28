@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #this script uses UNTIL to print Best School
 i="0"
-until [ ! $i -lt 9 ]
+until [ ! $i -lt 10 ]
 do
 	echo "Best School"
 	i=$((i+1))
