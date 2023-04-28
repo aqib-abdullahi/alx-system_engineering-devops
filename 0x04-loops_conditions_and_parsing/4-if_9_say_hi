@@ -2,12 +2,12 @@
 #this script uses while and if statement to print
 
 i="0"
-while  [ $i -lt 10 ]
+while  [ $i -lt 11 ]
 do
-	if [ $i -eq 8 ];then
+	if [ $i -eq 9 ];then
 		echo "Hi"
 		i=$((i+1))
-	elif [ $i -eq 9 ];then
+	elif [ $i -eq 10 ];then
 		echo "Best School"
 		i=$((i+1))
 	else
