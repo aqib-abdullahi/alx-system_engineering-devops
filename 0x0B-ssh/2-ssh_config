@@ -1,0 +1,6 @@
+# ssh_config
+# Custom client configuration file
+Host 98.98.98.98
+	User ubuntu
+	IdentityFile ~/.ssh/school
+	BatchMode yes
