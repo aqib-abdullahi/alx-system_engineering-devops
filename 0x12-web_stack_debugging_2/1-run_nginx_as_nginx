@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Configure a broken container to work with nginx at port 8080
+
+pkill apache2
+chown nginx:nginx /etc/nginx/nginx.conf
+chmod 0644 /etc/nginx/nginx.conf
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+su nginx -c "service nginx restart"
