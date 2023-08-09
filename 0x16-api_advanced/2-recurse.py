@@ -14,7 +14,7 @@ def recurse(subreddit, hot_list=[], after=''):
     api_uri = '{base}/r/{subreddit}/hot.json'.format(base=base_url,
                                                      subreddit=subreddit)
     payload = {'after': after, 'limit': '100'}
-    user_agent = {'User-Agent' 'Python/requests'}
+    user_agent = {'User-Agent': 'Python/requests'}
     res = requests.get(api_uri, headers=user_agent,
                        params=payload, allow_redirects=False)
     if res.status_code == 200:
