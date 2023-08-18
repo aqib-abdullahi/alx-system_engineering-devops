@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-
 # Get the current Gunicorn master process ID
-MASTER_PID=$(ps aux | grep '[g]unicorn.*master' | awk '{print $2}')
+
+MASTER_PID=$(pgrep -f 'gunicorn.*master')
 
 # If the master process ID is found, initiate a graceful reload
 if [ -n "$MASTER_PID" ]; then
     echo "Initiating graceful reload of Gunicorn..."
-    kill -HUP $MASTER_PID
+    kill -HUP "$MASTER_PID"
     sleep 2
     echo "Graceful reload complete."
 else
