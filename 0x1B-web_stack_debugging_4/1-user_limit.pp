@@ -1,11 +1,9 @@
-#resolves too many open files errors
+#resolves too many open files error
 
-exec { 'change-os-configuration-for-holberton-user':
-  command => "/bin/sed -i '/soft nofile/d; /hard nofile/d; /holberton soft nofile/d; /holberton hard nofile/d' /etc/security/limits.conf && echo -e 'holberton soft nofile 4096\nholberton hard nofile 8192' >> /etc/security/limits.conf",
+exec { 'change-max-open-files-hard-limit':
+  command => "/bin/sed -i /etc/security/limits.conf -e 's/hard nofile [0-9]\+/hard nofile 4200/g'"
 }
 
-exec { 'apply-pam-session':
-  command => 'pam-auth-update --package',
-  require => Exec['change-os-configuration-for-holberton-user'],
+exec { 'change-max-open-files-soft-limit':
+  command => "/bin/sed -i /etc/security/limits.conf -e 's/soft nofile [0-9]\+/soft nofile 3000/g'"
 }
-
